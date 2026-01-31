@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+dist/
+frontend/dist/
+
+# Environment variables
+.env
+
+# System artifacts
+.DS_Store
+.idea/
+.vscode/
+
+# Agent artifacts
+.gemini/
+.agent/
+BLAST.md
+gemini.md
+findings.md
+progress.md
+task_plan.md
+
+# Application Output
+output/playwright/*
+!output/playwright/.gitkeep
