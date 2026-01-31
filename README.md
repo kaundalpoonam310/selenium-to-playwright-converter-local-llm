@@ -16,19 +16,19 @@ The application follows a 3-tier architecture designed for privacy and speed. No
 ```mermaid
 graph LR
     subgraph Frontend [React Web UI]
-        A[Input Editor<br/>(Java)] -->|POST /api/convert| B(Backend API)
-        C[Output Viewer<br/>(Playwright TS)]
+        A["Input Editor<br/>(Java)"] -->|"POST /api/convert"| B("Backend API")
+        C["Output Viewer<br/>(Playwright TS)"]
     end
 
     subgraph Backend [Express Server]
-        B -->|Prompt Construction| D{LLM Service}
-        D -->|Response| B
-        B -->|Write File| E[FileSystem<br/>output/playwright/]
-        B -->|JSON Response| C
+        B -->|"Prompt Construction"| D{"LLM Service"}
+        D -->|"Response"| B
+        B -->|"Write File"| E["FileSystem<br/>output/playwright/"]
+        B -->|"JSON Response"| C
     end
 
     subgraph AI [Local LLM Layer]
-        D <-->|Ollama API| F[(Ollama Server<br/>CodeLlama)]
+        D <-->|"Ollama API"| F[("Ollama Server<br/>CodeLlama")]
     end
 
     style Frontend fill:#1a1b2e,stroke:#00e5ff,stroke-width:2px,color:#fff
